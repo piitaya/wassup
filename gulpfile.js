@@ -17,7 +17,7 @@ const gdata = require('gulp-data');
 const ftp = require('vinyl-ftp');
 const minimist = require('minimist');
 
-const deployArgs = minimist(process.argv.slice(2));
+const deployArgs = minimist(process.argv.slice(3));
 const out_dir = 'dist';
 const port = process.env.PORT || 3000;
 const livereload_port = 13888;
@@ -110,9 +110,8 @@ gulp.task('dev', () => {
 
 gulp.task('deploy', function() {
   var remotePath = '/dev/';
-  console.log(deployArgs);
   var conn = ftp.create({
-    host: 'ftp.cluster026.hosting.ovh.net',
+    host: deployArgs.host,
     user: deployArgs.user,
     password: deployArgs.password,
     log: gutil.log
