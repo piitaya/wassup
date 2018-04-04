@@ -22,7 +22,7 @@ const out_dir = 'dist';
 const port = process.env.PORT || 3000;
 const livereload_port = 13888;
 
-gulp.task('clean', function () {
+gulp.task('clean', () => {
     return gulp.src(out_dir, {read: false})
     .pipe(clean());
 });
@@ -91,7 +91,7 @@ gulp.task('watch', () => {
     gulp.watch('src/ts/**/*.ts', ['js']);
 });
 
-gulp.task('connect', function() {
+gulp.task('connect', () => {
     connect.server({
         root: out_dir,
         livereload: {
@@ -108,7 +108,7 @@ gulp.task('dev', () => {
     );
 });
 
-gulp.task('deploy', function() {
+gulp.task('deploy', () => {
   var remotePath = '/dev/';
   var conn = ftp.create({
     host: deployArgs.host,
