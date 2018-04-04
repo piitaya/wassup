@@ -1,0 +1,47 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+p {
+    margin: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'FuturaStd';
+    src: url('../assets/fonts/FuturaStd-Book.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaStd';
+    src: url('../assets/fonts/FuturaStd-Bold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+$font-primary: 'FuturaStd';
+
+$white: #ffffff;
+$black: #000000;
+$orange: #f56400;
+
+$break-mobile: 700px;
+$break-tablet: 920px;
+$break-desktop: 1260px;
+
+@media(min-width: $break-tablet) {
+    .not-desktop {
+        display: none !important;
+    }
+}
+@media(max-width: $break-tablet - 1) {
+    .not-mobile {
+        display: none !important;
+    }
+}

@@ -1,0 +1,81 @@
+.ui-row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-left:  -10px;
+    margin-right: -10px;
+    flex-direction: row;
+    .ui-col {
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        @for $i from 1 through 12 {
+            &.ui-col-xs-#{$i} {
+                width: 100% * $i / 12;
+            }
+        }
+        @media (min-width: $break-mobile) {
+            @for $i from 1 through 12 {
+                &.ui-col-sm-#{$i} {
+                    width: 100% * $i / 12;
+                }
+            }
+        }
+        @media (min-width: $break-tablet) {
+            @for $i from 1 through 12 {
+                &.ui-col-md-#{$i} {
+                    width: 100% * $i / 12;
+                }
+            }
+        }
+        @media (min-width: $break-desktop) {
+            @for $i from 1 through 12 {
+                &.ui-col-lg-#{$i} {
+                    width: 100% * $i / 12;
+                }
+            }
+        }
+    }
+    @media (max-width: $break-mobile - 1) {
+        &.xs-inverse {
+            flex-direction: row-reverse;
+        }
+    }
+    @media (min-width: $break-mobile) and (max-width: $break-tablet - 1) {
+        &.sm-inverse {
+            flex-direction: row-reverse;
+        }
+    }
+    @media (min-width: $break-tablet) and (max-width: $break-desktop - 1) {
+        &.md-inverse {
+            flex-direction: row-reverse;
+        }
+    }
+    @media (min-width: $break-desktop) {
+        &.lg-inverse {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.hide-xs {
+    @media (max-width: $break-mobile - 1) {
+        display: none !important;
+    }
+}
+.hide-sm {
+    @media (min-width: $break-mobile) and (max-width: $break-tablet - 1) {
+        display: none !important;
+    }
+}
+.hide-md {
+    @media (min-width: $break-tablet) and (max-width: $break-desktop - 1) {
+        display: none !important;
+    }
+}
+.hide-lg {
+    @media (min-width: $break-desktop) {
+        display: none !important;
+    }
+}

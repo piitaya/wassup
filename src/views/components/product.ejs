@@ -1,0 +1,41 @@
+<section class="section-product" id="products">
+    <div class="section-title">
+        <img src="/assets/img/us/products-us.svg" />
+    </div>
+    <div class="container">
+        <div class="ui-row">
+            <% products.forEach((product) => { %>
+                <div class="ui-col ui-col-xs-6 ui-col-md-4">
+                    <div class="block">
+                        <div class="image">
+                            <div class="background" style="background-image: url('<%= product.image %>')"></div>
+                            <a class="overlay not-mobile" href="<%= product.link %>" target="_blank">
+                                <div class="text">
+                                    <p class="title"><%= product.title %></p>
+                                    <button class="btn white" href="">Shop on Esty</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="info not-desktop">
+                            <p class="title"><%= product.title %></p>
+                            <a class="btn orange" href="">Shop on Esty</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+            <div class="ui-col ui-col-xs-6 ui-col-md-4 not-mobile">
+                <div class="block">
+                    <div class="image instagram">
+                        <div class="background"></div>
+                        <a class="overlay" href="">
+                            <div class="border">
+                                <i class="fab fa-instagram"></i>
+                                <p>Follow us on Instagram</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
